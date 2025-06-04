@@ -1,0 +1,579 @@
+:: StoryTitle
+Fungi Adventure
+
+
+:: StoryData
+{
+  "ifid": "33F7CA7C-026B-42C1-904A-57C587B9C990",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "The Fungi Quest: The Forest of Eternal Growth",
+  "zoom": 1
+}
+
+
+:: Decomposers Correct {"position":"825,1000","size":"100,100"}
+<<set $fullpath += " → Decomposers Correct">>
+
+The ground hums with energy. A glowing mycelium trail stretches ahead.
+
+[[Follow the trail into the drought.|Drought]]
+
+<img src="Mycelium-path.jpg" alt="Mycelium path" width="500">
+
+
+:: Decomposers Incorrect {"position":"1100,900","size":"100,100"}
+<<set $fullpath += " → March of the Decomposers Partial Correct">>
+
+An old, wise mushroom appears and says kindly: "Let’s think about that again. Remember, change happens over generations."
+
+[[Try the question again.|March of the Decomposers]]
+
+<img src="Wise-mushroom.jpg" alt="Wise Mushroom" width="500">
+
+<!-- Audio element -->
+<audio id="partial-correct-audio" src="Fungi incorrect loop .m4a"></audio>
+
+<!-- Styled play button -->
+<button class="glow-button" style="margin-top: 10px;" onclick="document.getElementById('partial-correct-audio').play()">
+  ▶️ Play Message
+</button>
+
+
+:: Decomposers Partial Correct {"position":"675,975","size":"100,100"}
+<<set $fullpath += " → March of the Decomposers Partial Correct">>
+
+An old, wise mushroom appears and says kindly: "Let’s think about that again. Remember, change happens over generations."
+
+[[Try the question again.|March of the Decomposers]]
+
+<img src="Wise-mushroom.jpg" alt="Wise Mushroom" width="500">
+
+<!-- Audio element -->
+<audio id="partial-correct-audio" src="Fungi incorrect loop .m4a"></audio>
+
+<!-- Styled play button -->
+<button class="glow-button" style="margin-top: 10px;" onclick="document.getElementById('partial-correct-audio').play()">
+  ▶️ Play Message
+</button>
+
+
+
+:: Drought {"position":"975,1050","size":"100,100"}
+<div style="text-align: center; margin-bottom: 10px;">
+	<span style="font-weight: bold; font-size: 1.2em;">Chapter 3: The Drought</span>
+	<audio id="fungi-chap3" src="Fungi Chapter 3.m4a"></audio>
+	<button class="glow-button" onclick="document.getElementById('fungi-chap3').play()">🔊</button>
+</div>
+
+<p style="font-size: 1.4em; font-weight: bold; max-width: 90%; margin: 30px auto; line-height: 1.5;">
+  “The forest experiences a long drought, and water becomes scarce. What is likely to happen to the fungi population over many generations?”
+</p>
+
+<div style="text-align: center; margin-bottom: 10px;">
+  <span style="font-weight: bold; font-size: 1.2em;">Read questions and answers</span>
+  <audio id="fungi-q3" src="Fungi question 3.m4a"></audio>
+  <button class="glow-button" onclick="document.getElementById('fungi-q3').play()">🎧</button>
+</div>
+
+🍄 [[Fungi that form protective spores will become more common because they can survive until conditions improve and reproduce later.|Drought Correct]]
+
+🍄 [[Fungi will learn to store water over time and pass this ability to their offspring.|Drought Partial Correct]]
+
+🍄 [[The population will stay the same because fungi always find ways to grow in dry conditions.|Drought Incorrect]]
+
+
+<img src="forest-floor.jpg" alt="Mushroom Forest" style="width: 80%; max-width: 500px; display: block; margin: 20px auto;">
+
+
+
+:: Drought Correct {"position":"750,1150","size":"100,100"}
+<<set $fullpath += " → Forest Floor Correct">>
+
+A hidden tunnel opens underground, leading you onward.
+
+[[Open your backpack to discover more.|Drought Extended Answer]]
+
+<img src="Tunnel.jpg" alt="Tunnel" width="500">
+
+<!-- Audio element -->
+<audio id="correct-audio3" src="Fungi question 3 correct answer.m4a"></audio>
+
+<!-- Styled play button -->
+<button class="glow-button" style="margin-top: 10px;" onclick="document.getElementById('correct-audio3').play()">
+  ▶️ Play Message
+</button>
+
+
+
+:: Drought Extended Answer {"position":"575,1225","size":"100,100"}
+Why will the fungi population change over many generations during a long drought? How will the fungi population respond to the lack of water?
+
+<img src="Wise-mushroom.jpg" alt="Wise Mushroom" width="500">
+
+<!-- Audio element -->
+<audio id="FF3-extended" src="Fungi question 3 explanation.m4a"></audio>
+
+<!-- Styled play button -->
+<button class="glow-button" style="margin-top: 10px;" onclick="document.getElementById('FF3-extended').play()">
+  ▶️ Play Message
+</button>
+
+<p>What is the name of the magical creature that lives in the valley?</p>
+
+<input id="answer" type="text" placeholder="Type your answer here" style="padding: 8px; font-size: 16px;">
+<button onclick="submitAnswer()" class="glow-button" style="margin-left: 10px;">Submit</button>
+
+<div id="feedback" style="margin-top: 15px; font-weight: bold;"></div>
+
+<<script>>
+window.submitAnswer = function () {
+  const answer = document.getElementById('answer').value.trim();
+
+  if (!answer) {
+    document.getElementById('feedback').innerText = "❗ Please enter an answer before submitting.";
+    return;
+  }
+
+  State.variables.freeTextAnswer = answer;
+  document.getElementById('feedback').innerText = "✅ Answer saved and will be submitted at the end!";
+};
+<</script>>
+
+[[Enter the tunnel.|Final Scenario]]
+
+
+:: Drought Incorrect {"position":"1150,1175","size":"100,100"}
+<<set $fullpath += " → Drought Incorrect">>
+
+A whisper in the wind urges: "Survival across generations often depends on protective strategies."
+
+[[Try the question again.|Drought]]
+
+<img src="Blocked-tunnel.jpg" alt="Blocked tunnel" width="500">
+
+
+:: Drought Partial Correct {"position":"1100,1300","size":"100,100"}
+<<set $fullpath += " → Drought Partial Correct">>
+
+An old, wise mushroom appears and says kindly: "Let’s think about that again. Remember, change happens over generations."
+
+[[Try the question again.|Drought]]
+
+<img src="Wise-mushroom.jpg" alt="Wise Mushroom" width="500">
+
+<!-- Audio element -->
+<audio id="partial-correct-audio" src="Fungi incorrect loop .m4a"></audio>
+
+<!-- Styled play button -->
+<button class="glow-button" style="margin-top: 10px;" onclick="document.getElementById('partial-correct-audio').play()">
+  ▶️ Play Message
+</button>
+
+
+:: Enter the Forest Floor {"position":"725,400","size":"100,100"}
+<div style="text-align: center; margin-bottom: 10px;">
+	<span style="font-weight: bold; font-size: 1.2em;">Chapter 1: The forest floor</span>
+	<audio id="fungi-chap1" src="Fungi chapter 1.m4a"></audio>
+	<button class="glow-button" onclick="document.getElementById('fungi-chap1').play()">🔊</button>
+</div>
+
+<p style="font-size: 1.4em; font-weight: bold; max-width: 90%; margin: 30px auto; line-height: 1.5;">
+  "Over time, the trees have grown closer together, and more leaves and branches are piling up on the forest floor. Some fungi grow taller, stretching above the leaf litter to release their spores, while others stay low. What is likely to happen to the fungi population over many generations?"
+</p>
+
+<div style="text-align: center; margin-bottom: 10px;">
+  <span style="font-weight: bold; font-size: 1.2em;">Read questions and answers</span>
+  <audio id="fungi-q1" src="Fungi question 1 .m4a"></audio>
+  <button class="glow-button" onclick="document.getElementById('fungi-q1').play()">🎧</button>
+</div>
+
+🍄 [[The fungi population will stay the same because all of them can survive in the forest.|Forest Floor Partial Correct]]
+
+🍄 [[Fungi that are better at spreading spores in these new conditions will be more likely to survive and reproduce, making their features more common over time.|Forest Floor Correct]]
+
+🍄 [[Some fungi may grow taller during their lifetime to adapt, and this feature will be passed down to their offspring.|Forest Floor Incorrect]]
+
+
+<img src="forest-floor.jpg" alt="Mushroom Forest" style="width: 80%; max-width: 500px; display: block; margin: 20px auto;">
+
+
+
+:: Final Correct {"position":"975,1400","size":"100,100"}
+<<set $fullpath += " → Final Correct">>
+
+The cavern glows brighter. You have learned the truth of adaptation and survival.
+
+<<include "Submit Results">>
+
+<img src="End.jpg" alt="End" width="500">
+
+
+:: Final Incorrect {"position":"850,1400","size":"100,100"}
+<<set $fullpath += " → Final Incorrect">>
+
+The Elder Cap shakes its cap slowly: "Think again about the difference between individuals and generations."
+
+[[Try the final question again.|Final Scenario]]
+
+<img src="Populations-incorrect.jpg" alt="Populations-incorrect" width="500">
+
+
+:: Final Partial Correct {"position":"1175,1500","size":"100,100"}
+<<set $fullpath += " → Final Partial Correct">>
+
+An old, wise mushroom appears and says kindly: "Let’s think about that again. Remember, change happens over generations."
+
+[[Try the question again.|Final Scenario]]
+
+<img src="Wise-mushroom.jpg" alt="Wise Mushroom" width="500">
+
+<!-- Audio element -->
+<audio id="partial-correct-audio" src="Fungi incorrect loop .m4a"></audio>
+
+<!-- Styled play button -->
+<button class="glow-button" style="margin-top: 10px;" onclick="document.getElementById('partial-correct-audio').play()">
+  ▶️ Play Message
+</button>
+
+
+:: Final Scenario {"position":"912.5,1275","size":"100,100"}
+<div style="text-align: center; margin-bottom: 10px;">
+	<span style="font-weight: bold; font-size: 1.2em;">Chapter 4: The Web of Life</span>
+	<audio id="fungi-chap4" src="Fungi chapter 4.m4a"></audio>
+	<button class="glow-button" onclick="document.getElementById('fungi-chap4').play()">🔊</button>
+</div>
+
+<p style="font-size: 1.4em; font-weight: bold; max-width: 90%; margin: 30px auto; line-height: 1.5;">
+"Who evolves over time—the individual fungi or the population?"
+</p>
+
+<div style="text-align: center; margin-bottom: 10px;">
+  <span style="font-weight: bold; font-size: 1.2em;">Read questions and answers</span>
+  <audio id="fungi-q4" src="Fungi question 4.m4a"></audio>
+  <button class="glow-button" onclick="document.getElementById('fungi-q4').play()">🎧</button>
+</div>
+
+🍄 [[Individual fungi evolve their features as they adapt to the forest’s changes during their lifetime.|Final Partial Correct]]
+
+🍄 [[Neither the population nor the individuals evolve; features remain the same no matter the conditions.|Final Incorrect]]
+
+🍄 [[The population evolves because fungi with features better suited to the environment survive and reproduce, making those features more common over many generations.|Final Correct]]
+
+
+<img src="Elder-cap.jpg" alt="Elder-cap" width="500">
+
+
+
+:: Forest Floor Correct {"position":"912.5,650","size":"100,100"}
+<<set $fullpath += " → Forest Floor Correct">>
+
+The forest seems to come alive. A glowing path appears, leading you deeper into the woods.
+
+[[Open your backpack to discover more.|Forest Floor Extended Answer]]
+
+<img src="Glowing-path.jpg" alt="Glwoing path" width="500">
+
+<!-- Audio element -->
+<audio id="correct-audio" src="Fungi question 1 correct answer.m4a"></audio>
+
+<!-- Styled play button -->
+<button class="glow-button" style="margin-top: 10px;" onclick="document.getElementById('correct-audio').play()">
+  ▶️ Play Message
+</button>
+
+
+
+
+
+:: Forest Floor Extended Answer {"position":"1075,725","size":"100,100"}
+Why will the fungi population change over time as the forest environment changes? How will the fungi population respond to the growing pile of leaves and closer trees?
+
+<img src="Wise-mushroom.jpg" alt="Wise Mushroom" width="500">
+
+<!-- Audio element -->
+<audio id="FF-extended" src="Fungi question 1 explanation.m4a"></audio>
+
+<!-- Styled play button -->
+<button class="glow-button" style="margin-top: 10px;" onclick="document.getElementById('FF-extended').play()">
+  ▶️ Play Message
+</button>
+
+<p>What is the name of the magical creature that lives in the valley?</p>
+
+<input id="answer" type="text" placeholder="Type your answer here" style="padding: 8px; font-size: 16px;">
+<button onclick="submitAnswer()" class="glow-button" style="margin-left: 10px;">Submit</button>
+
+<div id="feedback" style="margin-top: 15px; font-weight: bold;"></div>
+
+<<script>>
+window.submitAnswer = function () {
+  const answer = document.getElementById('answer').value.trim();
+
+  if (!answer) {
+    document.getElementById('feedback').innerText = "❗ Please enter an answer before submitting.";
+    return;
+  }
+
+  State.variables.freeTextAnswer = answer;
+  document.getElementById('feedback').innerText = "✅ Answer saved and will be submitted at the end!";
+};
+<</script>>
+
+[[Follow the glowing path to the decomposers.|March of the Decomposers]]
+
+
+:: Forest Floor Incorrect {"position":"775,650","size":"100,100"}
+<<set $fullpath += " → Forest Floor Incorrect">>
+
+An old, wise mushroom appears and says kindly: "Let’s think about that again. Remember, change happens over generations."
+
+[[Try the question again.|Enter the Forest Floor]]
+
+<img src="Wise-mushroom.jpg" alt="Wise Mushroom" width="500">
+
+<!-- Audio element -->
+<audio id="partial-correct-audio" src="Fungi incorrect loop .m4a"></audio>
+
+<!-- Styled play button -->
+<button class="glow-button" style="margin-top: 10px;" onclick="document.getElementById('partial-correct-audio').play()">
+  ▶️ Play Message
+</button>
+
+
+
+:: Forest Floor Partial Correct {"position":"600,625","size":"100,100"}
+<<set $fullpath += " → Forest Floor Partial Correct">>
+
+An old, wise mushroom appears and says kindly: "Let’s think about that again. Remember, change happens over generations."
+
+[[Try the question again.|Enter the Forest Floor]]
+
+<img src="Wise-mushroom.jpg" alt="Wise Mushroom" width="500">
+
+<!-- Audio element -->
+<audio id="partial-correct-audio" src="Fungi incorrect loop .m4a"></audio>
+
+<!-- Styled play button -->
+<button class="glow-button" style="margin-top: 10px;" onclick="document.getElementById('partial-correct-audio').play()">
+  ▶️ Play Message
+</button>
+
+
+
+:: March of the Decomposers {"position":"800,850","size":"100,100"}
+<div style="text-align: center; margin-bottom: 10px;">
+	<span style="font-weight: bold; font-size: 1.2em;">Chapter 2: The March of the Decomposers</span>
+	<audio id="fungi-chap2" src="Fungi chapter 2.m4a"></audio>
+	<button class="glow-button" onclick="document.getElementById('fungi-chap2').play()">🔊</button>
+</div>
+
+<p style="font-size: 1.4em; font-weight: bold; max-width: 90%; margin: 30px auto; line-height: 1.5;">
+  “The forest has been hit by a storm, leaving behind a large amount of fallen trees. Over time, what is likely to happen to the fungi population?”
+</p>
+
+<div style="text-align: center; margin-bottom: 10px;">
+  <span style="font-weight: bold; font-size: 1.2em;">Read questions and answers</span>
+  <audio id="fungi-q2" src="Fungi question 2.m4a"></audio>
+  <button class="glow-button" onclick="document.getElementById('fungi-q2').play()">🎧</button>
+</div>
+
+🍄 [[Fungi that break down wood more quickly will become more common because they can take advantage of the abundant material and reproduce faster.|Decomposers Correct]]
+
+🍄 [[Fungi that decompose tough materials will become more common, as they can break down the tough bark of fallen trees, making them more important than fast decomposers.|Decomposers Partial Correct]]
+
+🍄 [[The population will remain unchanged because all fungi will decompose material at the same rate.|Decomposers Incorrect]]
+
+
+<img src="forest-floor.jpg" alt="Mushroom Forest" style="width: 80%; max-width: 500px; display: block; margin: 20px auto;">
+
+
+
+:: StoryInit {"position":"925,300","size":"100,100"}
+<<cacheaudio "background-music" "background-music.mp3">>
+<<audio "background-music" loop play>>
+
+
+:: Submit Results {"position":"900,1525","size":"100,100"}
+<<script>>
+var formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdD9yFUG_oWHx1232-JTt_duKPHvWs59GYuwJzbxzl6y4FbnQ/formResponse";
+var formData = new FormData();
+formData.append("entry.2095705600", State.variables.fullpath);  // Path taken
+formData.append("entry.2112699112", State.variables.userID);    // Identifier
+formData.append("entry.275433579", State.variables.freeTextAnswer || "");  // Free answer Q1
+formData.append("entry.387631212", State.variables.freeTextAnswer || "");  // Free answer Q3
+
+
+fetch(formUrl, {
+  method: "POST",
+  mode: "no-cors",
+  body: formData
+});
+<</script>>
+
+You find yourself back at the forest edge, the wisdom of the fungi echoing in your mind. Thank you for playing!
+
+''The End.''
+
+
+:: The Fungi Quest: The Forest of Eternal Growth {"position":"725,275","size":"100,100"}
+<<set $fullpath = "Started story">>
+
+<div style="text-align: center; margin: 0 auto; max-width: 800px;">
+  <h1 style="margin: 10px 0;">The Fungi Quest: The Forest of Eternal Growth</h1>
+
+  <img src="forest-background.jpg" alt="Forest background"
+       style="width: 100%; margin: 10px 0; display: block;">
+
+  <p><strong>Please enter your identifier:</strong></p>
+  <input id="userInput" type="text" placeholder="e.g. 12345"
+         oninput="enableBegin()" style="padding: 8px; font-size: 1em; width: 60%; max-width: 300px;">
+
+  <br><br>
+
+  <!-- Audio elements -->
+  <audio id="intro1" src="Fungi intro 1.m4a"></audio>
+  <audio id="intro2" src="Fungi intro 2.m4a"></audio>
+
+  <!-- Play audio sequence -->
+  <button class="glow-button" onclick="playIntroAudio()" style="margin: 10px auto; display:block;">
+    The adventure starts here
+  </button>
+
+  <!-- Begin Button -->
+  <a id="beginLink" class="link-internal"
+     onclick="startStory()" style="pointer-events: none; opacity: 0.5; display: block; margin-top: 20px;">
+    <b>Begin</b>
+  </a>
+</div>
+
+<<script>>
+window.enableBegin = function () {
+  const input = document.getElementById("userInput");
+  const begin = document.getElementById("beginLink");
+  if (input && input.value.trim() !== "") {
+    begin.style.pointerEvents = "auto";
+    begin.style.opacity = "1";
+  } else {
+    begin.style.pointerEvents = "none";
+    begin.style.opacity = "0.5";
+  }
+};
+
+window.playIntroAudio = function () {
+  const audio1 = document.getElementById("intro1");
+  const audio2 = document.getElementById("intro2");
+
+  if (audio1 && audio2) {
+    audio1.currentTime = 0;
+    audio2.currentTime = 0;
+
+    audio1.onended = () => audio2.play();
+    audio1.play().catch(e => console.warn("Autoplay blocked:", e));
+  }
+};
+
+window.startStory = function () {
+  const input = document.getElementById("userInput");
+  if (input && input.value.trim() !== "") {
+    State.variables.userID = input.value.trim();
+    State.variables.fullpath = "Started story";
+    Engine.play("Enter the Forest Floor");
+  }
+};
+<</script>>
+
+
+:: StoryScript [script]
+var link = document.createElement("link");
+link.href = "https://fonts.googleapis.com/css2?family=Cinzel&display=swap";
+link.rel = "stylesheet";
+document.head.appendChild(link);
+
+$('#ui-bar').remove();
+$(document.head).find('#style-ui-bar').remove();
+
+:: StoryStylesheet [stylesheet]
+body {
+  background-color: #0b1c0e;
+  font-family: Georgia, serif;
+  font-size: 1.4em;
+  padding: 5px;
+}
+
+img {
+  display: block;
+  margin: 0 auto 0px auto; /* top 0, bottom 20px, left/right auto (centered) */
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px; /* optional: soft rounded corners */
+}
+
+
+a.link-internal {
+  color: #90ee90;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+a.link-internal:hover {
+  color: #ffffff;
+  background: rgba(53, 94, 59, 0.7);
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.start-container h1 {
+  margin: 0 0 10px 0;
+}
+
+.start-container img {
+  margin: 2px auto;
+  display: block;
+}
+
+.start-container button {
+  margin-top: 2px;
+}
+
+audio {
+  display: none;
+}
+
+.glow-button {
+  background-color: transparent;
+  color: #b3ffcc;
+  border: 2px solid #b3ffcc;
+  padding: 5px 10px;
+  font-size: 1.4em;
+  font-family: 'Cinzel', serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #66ffcc;
+  margin-top: 0;
+}
+
+.glow-button {
+  margin: 2px auto;
+  padding: 5px 10px;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+tw-link {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #90ee90;
+  text-shadow: 0 0 8px #90ee90;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+tw-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px #ffffff, 0 0 10px #90ee90;
+}

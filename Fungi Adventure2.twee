@@ -1,0 +1,206 @@
+:: StoryTitle
+Fungi Adventure
+
+
+:: StoryData
+{
+  "ifid": "33F7CA7C-026B-42C1-904A-57C587B9C990",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "The Fungi Quest: The Forest of Eternal Growth",
+  "zoom": 1
+}
+
+
+:: Decomposers Correct {"position":"975,900","size":"100,100"}
+<<set $fullpath += " → Deomposers Correct">>
+
+The ground hums with energy. A glowing mycelium trail stretches ahead.
+
+[[Follow the trail into the drought.|Drought]]
+
+<img src="Mycelium-path.jpg" alt="Mycelium path" width="500">
+
+
+:: Decomposers Incorrect {"position":"1100,900","size":"100,100"}
+<<set $fullpath += " → Decomposers Incorrect">>
+
+The bioluminescent fungi pulse gently: "Think about who can take advantage of the sudden bounty."
+
+[[Try the question again.|March of the Decomposers]]
+
+<img src="Mushroom-bounty.jpg" alt="Mushroom bounty" width="500">
+
+
+:: Drought {"position":"975,1025","size":"100,100"}
+You enter a sun-scorched section of forest. A cracked stone tablet asks:
+
+''"During a long drought, what happens to the fungi population over generations?"''
+
+[[Fungi that form protective spores will become more common.|Drought Correct]]
+[[Fungi will learn to store water and pass it to offspring.|Drought Incorrect]]
+[[The population will stay the same.|Drought Incorrect]]
+
+<img src="Drought.jpg" alt="Drought" width="500">
+
+
+:: Drought Correct {"position":"912.5,1150","size":"100,100"}
+<<set $fullpath += " → Drought Correct">>
+
+A hidden tunnel opens underground, leading you onward.
+
+[[Enter the tunnel.|Final Scenario]]
+
+<img src="Tunnel.jpg" alt="Tunnel" width="500">
+
+
+:: Drought Incorrect {"position":"1037.5,1150","size":"100,100"}
+<<set $fullpath += " → Drought Incorrect">>
+
+A whisper in the wind urges: "Survival across generations often depends on protective strategies."
+
+[[Try the question again.|Drought]]
+
+<img src="Blocked-tunnel.jpg" alt="Blocked tunnel" width="500">
+
+
+:: Enter the Forest Floor {"position":"725,400","size":"100,100"}
+You begin on the forest floor, surrounded by towering trees and diverse fungi. An old wooden sign reads:
+
+''"Over time, trees have grown closer together, and more leaves and branches pile up. What is likely to happen to the fungi population over generations?"''
+
+[[The fungi population will stay the same.|Forest Floor Incorrect]]
+[[Fungi better at spreading spores will become more common.|Forest Floor Correct]]
+[[Some fungi may grow taller during their lifetime.|Forest Floor Incorrect]]
+
+<img src="forest-floor.jpg" alt="Mushroom Forest" width="500">
+
+
+:: Final Correct {"position":"975,1400","size":"100,100"}
+<<set $fullpath += " → Final Correct">>
+
+The cavern glows brighter. You have learned the truth of adaptation and survival.
+
+<<include "Submit Results">>
+
+<img src="End.jpg" alt="End" width="500">
+
+
+:: Final Incorrect {"position":"850,1400","size":"100,100"}
+<<set $fullpath += " → Final Incorrect">>
+
+The Elder Cap shakes its cap slowly: "Think again about the difference between individuals and generations."
+
+[[Try the final question again.|Final Scenario]]
+
+<img src="Populations-incorrect.jpg" alt="Populations-incorrect" width="500">
+
+
+:: Final Scenario {"position":"912.5,1275","size":"100,100"}
+You find yourself in a vast cavern filled with glowing fungi. The Elder Cap addresses you:
+
+''"Who evolves over time—the individual fungi or the population?"''
+
+[[Individual fungi evolve during their lifetime.|Final Incorrect]]
+[[Neither population nor individuals evolve.|Final Incorrect]]
+[[The population evolves.|Final Correct]]
+
+<img src="Elder-cap.jpg" alt="Elder-cap" width="500">
+
+
+:: Forest Floor Correct {"position":"912.5,650","size":"100,100"}
+<<set $fullpath += " → Forest Floor Correct">>
+
+The forest seems to come alive. A glowing path appears, leading you deeper into the woods.
+
+[[Follow the glowing path to the decomposers.|March of the Decomposers]]
+
+<img src="Glowing-path.jpg" alt="Glwoing path" width="500">
+
+
+:: Forest Floor Incorrect {"position":"775,650","size":"100,100"}
+<<set $fullpath += " → Forest Floor Incorrect">>
+
+An old, wise mushroom appears and says kindly: "Let’s think about that again. Remember, change happens over generations."
+
+[[Try the question again.|Enter the Forest Floor]]
+
+<img src="Wise-mushroom.jpg" alt="Wise Mushroom" width="500">
+
+
+:: March of the Decomposers {"position":"912.5,775","size":"100,100"}
+The path leads to a clearing of fallen trees and decaying matter. Bioluminescent mushrooms challenge you:
+
+''"A storm has left many fallen trees. Over time, what will happen to the fungi population?"''
+
+[[Fungi that break down wood more quickly will become more common.|Decomposers Correct]]
+[[Fungi that decompose tough materials will become more common.|Decomposers Incorrect]]
+[[The population will remain unchanged.|Decomposers Incorrect]]
+
+<img src="Decomposers.jpg" alt="March of the Decomposers" width="500">
+
+
+:: Submit Results {"position":"900,1525","size":"100,100"}
+<<script>>
+var formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdD9yFUG_oWHx1232-JTt_duKPHvWs59GYuwJzbxzl6y4FbnQ/formResponse";
+var formData = new FormData();
+formData.append("entry.2095705600", State.variables.fullpath);
+
+fetch(formUrl, {
+  method: "POST",
+  mode: "no-cors",
+  body: formData
+});
+<</script>>
+
+You find yourself back at the forest edge, the wisdom of the fungi echoing in your mind. Thank you for playing!
+
+''The End.''
+
+
+:: The Fungi Quest: The Forest of Eternal Growth {"position":"725,275","size":"100,100"}
+<<set $fullpath = "Started story">>
+
+<img src="forest-background.jpg" alt="Forest background" style="width:100%; max-width:800px; margin-bottom:20px;">
+
+In the heart of an ancient forest, hidden beneath towering trees and tangled vines, lies a secret world teeming with life—the Kingdom of Mycelia.
+
+You are an apprentice mycologist, exploring the secrets of Mycelia’s survival. Guided by the whispers of the forest, you must journey deep into its heart, uncovering how fungi populations change over time in response to their environment.
+
+''Begin your journey:''
+[[Enter the Forest Floor]]
+
+
+:: StoryScript [script]
+var link = document.createElement("link");
+link.href = "https://fonts.googleapis.com/css2?family=Cinzel&display=swap";
+link.rel = "stylesheet";
+document.head.appendChild(link);
+
+:: StoryStylesheet [stylesheet]
+body {
+  background-color: #0b1c0e;
+  font-family: Georgia, serif;
+  font-size: 1.4em;
+  padding: 20px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+a.link-internal {
+  color: #90ee90;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+a.link-internal:hover {
+  color: #ffffff;
+  background: rgba(53, 94, 59, 0.7);
+  padding: 2px 5px;
+  border-radius: 5px;
+}
